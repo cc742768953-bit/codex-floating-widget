@@ -1,9 +1,9 @@
-﻿$ErrorActionPreference='Stop'
+$ErrorActionPreference='Stop'
 . (Join-Path $PSScriptRoot '..\Common.ps1')
 $script:Checks=0
 function Assert($value,$message){if(-not $value){throw "FAIL: $message"};$script:Checks++}
 function Get-AppxPackage {param($Name,$ErrorAction) [pscustomobject]@{PackageFamilyName='OpenAI.Codex_test'}}
-$temp=Join-Path $env:TEMP ('codex-widget-tests-'+[guid]::NewGuid().ToString('N'))
+$temp=[IO.Path]::GetFullPath((Join-Path $env:TEMP ('codex-widget-tests-'+[guid]::NewGuid().ToString('N'))))
 [IO.Directory]::CreateDirectory($temp)|Out-Null
 try {
     $path=Join-Path $temp 'config.json'

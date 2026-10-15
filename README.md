@@ -5,8 +5,8 @@ Windows 桌面上的轻量余量仪表盘：查看多个 Codex 账号的 **5 小
 这是独立的第三方桌面工具，与 OpenAI 无隶属关系。当前为 **v0.1.0-beta.1**，面向已有 Codex Switcher 本机服务的 Windows 用户。
 
 <p>
-  <img src="docs/images/collapsed.png" width="200" alt="折叠状态，全部使用虚构账号和示例额度">
-  <img src="docs/images/expanded.png" width="200" alt="展开查看三个虚构账号">
+  <img src="docs/images/collapsed.png" width="200" align="top" alt="折叠状态，全部使用虚构账号和示例额度">
+  <img src="docs/images/expanded.png" width="200" align="top" alt="展开查看三个虚构账号">
 </p>
 
 截图由实际 WPF 界面使用虚构的 example.com / example.org / example.net 账号生成；图中额度为示例。

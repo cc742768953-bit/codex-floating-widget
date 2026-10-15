@@ -1,0 +1,14 @@
+# Machine-local configuration and generated state
+config.json
+widget-settings.json
+switch-results/
+logs/
+backups/
+maintenance/
+tests/artifacts/
+dist/
+*.log
+*.tmp
+*.user
+.DS_Store
+Thumbs.db

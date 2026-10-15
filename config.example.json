@@ -1,0 +1,7 @@
+{
+  "ApiPort": 3210,
+  "SwitcherExecutable": "",
+  "CodexExecutable": "",
+  "CodexAppId": "",
+  "StartupTaskName": "Codex Floating Widget Public"
+}

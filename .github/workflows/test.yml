@@ -1,0 +1,25 @@
+name: Windows checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse PowerShell source
+        shell: powershell
+        run: |
+          Get-ChildItem -Recurse -Filter *.ps1 | ForEach-Object {
+            $tokens=$null; $errors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors) | Out-Null
+            if($errors.Count){ throw ($_.Name + ': ' + ($errors.Message -join '; ')) }
+          }
+      - name: Configuration, controller and installation mocks
+        shell: powershell
+        run: |
+          & .\tests\Test-Common.ps1
+          & .\tests\Test-SwitchController.ps1
+          & .\tests\Test-Install.ps1
